@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="content title">
+        <span style="float: left">dev@felix-gehring.de</span>
+        <a href="/articles">articles</a>
+      </div>
+    </nav>
+    <div class="wrapper">
+      <div class="content">
+        <div class="header">
+          <h2>{{ title }}</h2>
+          <p class="introduction">{{ introduction }}</p>
+        </div>
+      </div>
+      <div class="content">
+        {{ content }}
+      </div>
+    </div>
+    <div class="aboutme">
+      <div class="content">
+        <img
+          style="display: inline-flex;"
+          src="/imgs/felix_gehring_1.jpg"
+          alt="portait"
+        />
+        <div class="aboutme_text">
+          <h4>About me</h4>
+          <p>
+            I am a programmer, living in Neuenkirchen, Germany, close to the
+            Dutch border.<br />
+            Professionally, I have been doing Java development for almost 10
+            years, using rich client libraries like Swing and SWT, as well as
+            back-end frameworks like Spring Boot. Lately, my interest shifted to
+            web development and the JAM stack with technologies like React,
+            Eleventy, FaunaDB and Netlify.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="content comments">
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        var disqus_config = function() {
+          this.page.url = "http://www.felix-gehring.de{{permalink}}"; // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = "{{permalink}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() {
+          // DON'T EDIT BELOW THIS LINE
+          var d = document,
+            s = d.createElement("script");
+          s.src = "https://felixgehring.disqus.com/embed.js";
+          s.setAttribute("data-timestamp", +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript
+        >Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript"
+          >comments powered by Disqus.</a
+        ></noscript
+      >
+    </div>
+  </body>
+</html>
