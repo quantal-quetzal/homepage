@@ -1,11 +1,8 @@
----
-eleventyExcludeFromCollections: true
----
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{ title }}</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -39,20 +36,12 @@ eleventyExcludeFromCollections: true
       </div>
       <div class="content">
         <table>
-          <tbody>
-            {%- for article in collections['all'] -%}
-            <tr>
+          <tbody><tr>
               <td>
-                <a href="{{ article.url }}">> {{ article.data.title }}</a>
+                <a href="/articles/2020/01/27/using-faunadb-with-an-identity-provider-with-openid-connect/">> Using FaunaDB with an Identity Provider with OpenID Connect</a>
               </td>
-              <td>
-                {%- for tag in article.data.tags -%}
-                <span class="tag">{{ tag }}</span>
-                {%- endfor -%}
-              </td>
-            </tr>
-            {%- endfor -%}
-          </tbody>
+              <td><span class="tag">FaunaDB</span><span class="tag">OIDC</span></td>
+            </tr></tbody>
         </table>
       </div>
     </div>

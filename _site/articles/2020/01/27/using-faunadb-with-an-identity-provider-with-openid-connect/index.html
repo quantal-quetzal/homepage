@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{ title }}</title>
+    <title>Using FaunaDB with an Identity Provider with OpenID Connect</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -29,12 +29,16 @@
     <div class="wrapper">
       <div class="content">
         <div class="header">
-          <h2>{{ title }}</h2>
-          <p class="introduction">{{ introduction }}</p>
+          <h2>Using FaunaDB with an Identity Provider with OpenID Connect</h2>
+          <p class="introduction">FaunaDB offers built-in user authentication, session and password management. While this is well-documented, working with an external authentication and identity service is much harder. In this article I will show you my solution.</p>
         </div>
       </div>
       <div class="content">
-        {{ content }}
+        <h3>Some Header</h3>
+<p>I'm writing something here.</p>
+<h3>Lorem</h3>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
       </div>
     </div>
     <div class="aboutme">
@@ -66,8 +70,8 @@
          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         var disqus_config = function() {
-          this.page.url = "http://www.felix-gehring.de{{permalink}}"; // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = "{{permalink}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          this.page.url = "http://www.felix-gehring.de/articles/{{ date | date: '%Y/%m/%d' }}/{{title | slug}}/"; // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = "/articles/{{ date | date: '%Y/%m/%d' }}/{{title | slug}}/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         (function() {
           // DON'T EDIT BELOW THIS LINE
