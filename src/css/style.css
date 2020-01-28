@@ -39,6 +39,10 @@ a {
   padding-top: 7.2rem;
 }
 
+.article_date {
+  font-size: small;
+}
+
 .introduction {
   font-style: italic;
 }
@@ -66,7 +70,7 @@ a {
 }
 
 .aboutme {
-  margin-top: 1em;
+  margin-top: 8rem;
   padding-top: 1em;
   padding-bottom: 1em;
   background-color: #f4f5f6;

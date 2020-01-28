@@ -1,15 +1,21 @@
 ---
-eleventyExcludeFromCollections: true
+changefreq: weekly
+date: Last Modified
+ignore: true
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{ title }}</title>
+    <title>Articles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="List of articles by Felix Gehring on IT related topics"
+    />
     <link
       rel="stylesheet"
-      href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+      href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic&display=swap"
     />
     <link
       rel="stylesheet"
@@ -20,6 +26,24 @@ eleventyExcludeFromCollections: true
       href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css"
     />
     <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
   </head>
   <body>
     <nav class="nav">
@@ -34,13 +58,13 @@ eleventyExcludeFromCollections: true
       <div class="content">
         <div class="header">
           <h2>Articles</h2>
-          <!--p class="introduction"></p-->
         </div>
       </div>
       <div class="content">
         <table>
           <tbody>
-            {%- for article in collections['all'] -%}
+            {%- for article in collections['all'] -%} {%- unless
+            article.data.ignore == true %}
             <tr>
               <td>
                 <a href="{{ article.url }}">> {{ article.data.title }}</a>
@@ -51,7 +75,7 @@ eleventyExcludeFromCollections: true
                 {%- endfor -%}
               </td>
             </tr>
-            {%- endfor -%}
+            {%- endunless %} {%- endfor -%}
           </tbody>
         </table>
       </div>
