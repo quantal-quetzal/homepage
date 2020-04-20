@@ -40,7 +40,7 @@ Login(
 
 Using an identity providing service frees the user from yet another password, and the app developer from having a login screen and keeping the password save. Instead all you usually get is a JWT token with some information about the user, like his or her email address. Thus, when the user tries to log in for the first time, you create the user document with all the relevant data from the identity provider, but, this time without the `credentials` part.
 
-> **Please not that with this technique, EVERYBODY with an account at that identity provider, can register in your application. You might want to add an extra flag, like `authorized` to every user, which you can later check before creating a token for that user, in case you want to control who can actually log into your app.**
+> **Please note that with this technique, EVERYBODY with an account at that identity provider, can register in your application. You might want to add an extra flag, like `authorized` to every user, which you can later check before creating a token for that user, in case you want to control who can actually log into your app.**
 
 ```fql
 Create(
