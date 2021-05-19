@@ -6,79 +6,56 @@ ignore: true
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Articles</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="List of articles by Felix Gehring on IT related topics"
-    />
-    <link
-      rel="stylesheet"
-      href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css"
-    />
-    <link
-      rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="/favicons/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicons/favicon-16x16.png"
-    />
-  </head>
-  <body>
-    <nav class="nav">
-      <div class="content title">
-        <a class="no_decoration" href="/" style="float: left"
-          >dev@felix-gehring.de</a
-        >
-        <a href="/articles">articles</a>
-      </div>
-    </nav>
-    <div class="wrapper">
-      <div class="content">
-        <div class="header">
-          <h2>Articles</h2>
-        </div>
-      </div>
-      <div class="content">
-        <table>
-          <tbody>
-            {%- for article in collections['all'] -%} {%- unless
-            article.data.ignore == true %}
-            <tr>
-              <td>
-                <a href="{{ article.url }}">> {{ article.data.title }}</a>
-              </td>
-              <td>
-                {%- for tag in article.data.tags -%}
-                <span class="tag">{{ tag }}</span>
-                {%- endfor -%}
-              </td>
-            </tr>
-            {%- endunless %} {%- endfor -%}
-          </tbody>
-        </table>
+
+<head>
+  <title>Articles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="List of articles by Felix Gehring on IT related topics" />
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <!-- Milligram CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="content title">
+      <a class="no_decoration" href="/" style="float: left">dev@felix-gehring.de</a>
+      <a href="/articles">articles</a>
+    </div>
+  </nav>
+  <div class="wrapper">
+    <div class="content">
+      <div class="header">
+        <h2>Articles</h2>
       </div>
     </div>
-  </body>
+    <div class="content">
+      <table>
+        <tbody>
+          {%- for article in collections['all'] -%} {%- unless
+          article.data.ignore == true %}
+          <tr>
+            <td>
+              <a href="{{ article.url }}">> {{ article.data.title }}</a>
+            </td>
+            <td>
+              {%- for tag in article.data.tags -%}
+              <span class="tag">{{ tag }}</span>
+              {%- endfor -%}
+            </td>
+          </tr>
+          {%- endunless %} {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
 </html>
