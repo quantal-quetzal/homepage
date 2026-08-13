@@ -7,6 +7,8 @@ const profileUrl =
   "https://www.personalfitness.de/suche/trainer/12032/felix-gehring-steinfurt.html";
 const contactUrl =
   "mailto:fit@felix-gehring.de?subject=Anfrage%20Personal%20Training";
+const examContactUrl =
+  "mailto:fit@felix-gehring.de?subject=Vorbereitung%20auf%20Pr%C3%BCfung%20oder%20Rettungsnachweis";
 const barbellTrainingUrl =
   "https://www.trainerakademie-koeln.de/ausbildungen/langhanteltrainerinnenausbildung";
 
@@ -32,7 +34,7 @@ export default function TrainingPage() {
 
       <main>
         <section className="bg-[#dce9dc]">
-          <div className="mx-auto grid min-h-[72svh] w-full max-w-[76rem] items-center gap-12 px-5 pb-16 pt-28 sm:px-8 md:grid-cols-[minmax(0,1fr)_18rem] md:py-28 lg:gap-24">
+          <div className="mx-auto grid min-h-[68svh] w-full max-w-[76rem] items-center gap-12 px-5 pb-16 pt-28 sm:px-8 md:grid-cols-[minmax(0,1fr)_18rem] md:py-28 lg:gap-24">
             <div className="max-w-2xl">
               <p className="mb-4 text-sm font-bold uppercase tracking-[0.12em] text-[#2b6655]">
                 Personal Training · Ochtrup & Umgebung
@@ -61,65 +63,122 @@ export default function TrainingPage() {
               height="932"
             />
           </div>
+        </section>
 
-          <div className="mt-16 border-t border-[#b9c8c0] pt-10">
-            <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#2b6655]">
-              Wobei ich dich unterstützen kann
-            </p>
-            <ul className="mt-6 divide-y divide-[#b9c8c0] border-y border-[#b9c8c0]">
-              <li className="py-5 text-lg leading-relaxed text-[#344b43]">
-                Du bereitest dich auf eine Aufnahmeprüfung bei der Polizei oder einer
-                Universität vor?
-              </li>
-              <li className="py-5 text-lg leading-relaxed text-[#344b43]">
-                Eine Zwischen- oder Abschlussprüfung in deiner Berufsausbildung steht an?
-              </li>
-              <li className="py-5 text-lg leading-relaxed text-[#344b43]">
-                Dein Arbeitgeber oder deine Schulleitung verlangt einen Nachweis der
-                Rettungsfähigkeit und du möchtest dafür gezielt üben?
-              </li>
-            </ul>
-            <p className="mt-6 max-w-2xl text-lg font-bold leading-relaxed text-[#13251f]">
-              Dann bist du bei mir richtig. Wir trainieren genau die Fähigkeiten, die du
-              für deine Prüfung oder deinen Nachweis brauchst.
-            </p>
+        <section className="bg-[#153b32] text-white">
+          <div className="mx-auto grid max-w-[76rem] gap-12 px-5 py-16 sm:px-8 md:py-20 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
+            <div className="lg:sticky lg:top-8 lg:self-start">
+              <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#9bc7b5]">
+                Gezielte Vorbereitung
+              </p>
+              <h2 className="mt-3 max-w-md text-3xl font-bold leading-tight sm:text-4xl">
+                Wenn es darauf ankommt, trainieren wir konkret.
+              </h2>
+              <p className="mt-5 max-w-md text-lg leading-relaxed text-[#d0ddd7]">
+                Du bringst die Anforderungen mit. Ich übersetze sie in einen
+                realistischen Trainingsplan und bereite dich gezielt auf den
+                entscheidenden Termin vor.
+              </p>
+              <a
+                className="mt-8 inline-flex items-center gap-3 border border-[#9bc7b5] px-5 py-3 font-bold text-white no-underline transition hover:bg-white hover:text-[#153b32]"
+                href={examContactUrl}
+              >
+                Prüfung besprechen
+                <ArrowUpRight aria-hidden="true" size={19} />
+              </a>
+            </div>
+
+            <div className="border-t border-[#53746a]">
+              <article className="grid gap-2 border-b border-[#53746a] py-7 sm:grid-cols-[11rem_1fr] sm:gap-8">
+                <h3 className="text-lg font-bold text-white">
+                  Polizei & Hochschule
+                </h3>
+                <p className="text-lg leading-relaxed text-[#d0ddd7]">
+                  Vorbereitung auf sportliche Aufnahmeprüfungen, abgestimmt auf
+                  die geforderten Disziplinen und dein aktuelles
+                  Leistungsniveau.
+                </p>
+              </article>
+              <article className="grid gap-2 border-b border-[#53746a] py-7 sm:grid-cols-[11rem_1fr] sm:gap-8">
+                <h3 className="text-lg font-bold text-white">
+                  Berufsausbildung
+                </h3>
+                <p className="text-lg leading-relaxed text-[#d0ddd7]">
+                  Gezieltes Training für anstehende Zwischen- oder
+                  Abschlussprüfungen, damit Technik und Ausdauer auch unter
+                  Prüfungsdruck sitzen.
+                </p>
+              </article>
+              <article className="grid gap-2 border-b border-[#53746a] py-7 sm:grid-cols-[11rem_1fr] sm:gap-8">
+                <h3 className="text-lg font-bold text-white">
+                  Rettungsfähigkeit
+                </h3>
+                <p className="text-lg leading-relaxed text-[#d0ddd7]">
+                  Praxisnahe Vorbereitung auf den Nachweis, den dein Arbeitgeber
+                  oder deine Schulleitung von dir verlangt.
+                </p>
+              </article>
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-[76rem] px-5 py-16 sm:px-8 md:py-24">
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
-                Mein Ansatz
-              </p>
-              <h2 className="mt-3 text-3xl font-bold leading-tight text-[#13251f] sm:text-4xl">
-                Persönlich geplant. Klar erklärt. Nachhaltig aufgebaut.
-              </h2>
+        <section className="bg-[#f6f8f2] text-[#13251f]">
+          <div className="mx-auto max-w-[76rem] px-5 py-16 sm:px-8 md:py-24">
+            <div className="grid gap-8 border-b border-[#cbd6cf] pb-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24 lg:pb-16">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
+                  So arbeiten wir
+                </p>
+                <h2 className="mt-3 max-w-md text-3xl font-bold leading-tight sm:text-4xl">
+                  Vom konkreten Ziel zu einem Plan, der in deinen Alltag passt.
+                </h2>
+              </div>
+              <div className="self-end">
+                <p className="max-w-2xl text-xl font-bold leading-relaxed text-[#153b32] sm:text-2xl">
+                  Gutes Training beginnt mit einer ehrlichen Bestandsaufnahme.
+                </p>
+                <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#445c54]">
+                  Wir klären, was du erreichen musst, wo du heute stehst und wie
+                  viel Zeit dir zur Verfügung steht. Daraus entsteht ein
+                  nachvollziehbarer Plan mit realistischen Etappen und einem
+                  klaren Zweck für jede Einheit.
+                </p>
+              </div>
             </div>
-            <div className="space-y-5 text-lg leading-relaxed text-[#344b43]">
-              <p>
-                Du möchtest schwimmen lernen, dich im Wasser sicherer fühlen
-                oder deine Technik und Leistung gezielt verbessern? Dein
-                Training richtet sich nach deinen Voraussetzungen und deinem
-                Ziel.
+
+            <div className="grid gap-8 py-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24 lg:py-16">
+              <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
+                Im Training
               </p>
-              <p>
-                Im Wasser arbeiten wir an Sicherheit, Wassergefühl und einer
-                effizienten Technik. Funktionelles Krafttraining, Langhantel und
-                Kettlebell kommen dort hinzu, wo sie dich belastbarer machen und
-                deine Leistung sinnvoll ergänzen.
+              <div className="grid gap-10 sm:grid-cols-2 sm:gap-0">
+                <article className="sm:pr-10">
+                  <h3 className="text-2xl font-bold">Im Wasser</h3>
+                  <p className="mt-4 text-lg leading-relaxed text-[#445c54]">
+                    Wir arbeiten präzise an Technik, Wassergefühl und
+                    Sicherheit. Du verstehst nicht nur, was du verändern sollst,
+                    sondern auch warum.
+                  </p>
+                </article>
+                <article className="border-t border-[#cbd6cf] pt-10 sm:border-l sm:border-t-0 sm:pl-10 sm:pt-0">
+                  <h3 className="text-2xl font-bold">An Land</h3>
+                  <p className="mt-4 text-lg leading-relaxed text-[#445c54]">
+                    Krafttraining, Langhantel und Kettlebell ergänzen das
+                    Training dort, wo sie dich belastbarer machen und dein
+                    sportliches Ziel unterstützen.
+                  </p>
+                </article>
+              </div>
+            </div>
+
+            <div className="grid gap-3 border-y border-[#cbd6cf] py-7 sm:grid-cols-[12rem_1fr] sm:gap-8">
+              <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
+                Erfahrung
               </p>
-              <p>
-                Daraus entsteht eine Trainingsplanung, die zu deinem Alltag und
-                deinem aktuellen Leistungsstand passt. Kein Programm von der
-                Stange, sondern ein nachvollziehbarer Weg, den wir gemeinsam
-                weiterentwickeln.
-              </p>
-              <p className="border-l-2 border-[#397967] pl-5 font-bold text-[#13251f]">
-                Meine Erfahrung reicht vom Einstieg ins Schwimmen bis zum
-                Leistungssport. 2025 begleitete ich als Trainer eine Mannschaft
-                der Altersklasse 13/14 auf dem Weg zum deutschen Meistertitel im
-                Mehrkampf.
+              <p className="max-w-3xl text-lg font-bold leading-relaxed">
+                Mein Blick reicht vom sicheren Einstieg absoluter
+                Schwimmanfänger bis zum Leistungssport. 2025 begleitete ich als
+                Trainer eine Mannschaft der Altersklasse 13/14 auf dem Weg zum
+                deutschen Meistertitel.
               </p>
             </div>
           </div>
@@ -146,9 +205,9 @@ export default function TrainingPage() {
                   DOSB-Trainer C Leistungssport im Rettungssport
                 </h3>
                 <p className="mt-8 max-w-md text-lg leading-relaxed text-[#344b43] md:min-h-[7rem]">
-                  Fundierte Technikvermittlung und leistungsorientierte Trainingsplanung
-                  im Schwimm- und Rettungssport, vom sicheren Einstieg bis zur gezielten
-                  Wettkampfvorbereitung.
+                  Fundierte Technikvermittlung und leistungsorientierte
+                  Trainingsplanung im Schwimm- und Rettungssport, vom sicheren
+                  Einstieg bis zur gezielten Wettkampfvorbereitung.
                 </p>
                 <img
                   className="mt-8 h-auto w-[16.25rem] max-w-full"
@@ -167,9 +226,9 @@ export default function TrainingPage() {
                   Langhanteltrainer der Trainerakademie Köln des DOSB
                 </h3>
                 <p className="mt-8 max-w-md text-lg leading-relaxed text-[#344b43] md:min-h-[7rem]">
-                  Fundierte Technikvermittlung und zielgerichtete Trainingsplanung mit der
-                  Langhantel, als Grundlage für Kraft, Belastbarkeit und sportliche
-                  Leistung.
+                  Fundierte Technikvermittlung und zielgerichtete
+                  Trainingsplanung mit der Langhantel, als Grundlage für Kraft,
+                  Belastbarkeit und sportliche Leistung.
                 </p>
                 <a
                   className="mt-8 inline-flex items-center gap-2 font-bold text-[#153b32]"
