@@ -11,12 +11,14 @@ export default function Profile() {
           Hi, I'm Felix
         </h1>
         <p>
-          I am a software developer from Ochtrup, Germany. If you would like to get in
-          touch with me, please contact me at{" "}
+          I am a full-stack developer from Ochtrup, Germany, specializing in TypeScript,
+          React, Java, AWS, and AI integration. I enjoy combining modern technologies with
+          a pragmatic approach to legacy systems and communicating across technical and
+          non-technical teams. You can reach me at{" "}
           <a className="whitespace-nowrap" href="mailto:dev@felix-gehring.de">
             dev@felix-gehring.de
           </a>
-          . Check out what I've done so far:
+          .
         </p>
       </div>
     </section>
