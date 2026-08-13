@@ -1,6 +1,42 @@
 const experience = [
   {
-    period: "since 07/2020",
+    period: "since 01/2025",
+    company: "Volkswagen Financial Services, Braunschweig",
+    description: (
+      <>
+        Development of an internal, AWS-hosted vehicle financing campaign platform. My
+        work focuses on integrating calculation, dealer inventory, and online platform
+        systems and on delivering an intuitive web interface.
+      </>
+    ),
+  },
+  {
+    period: "05/2022 - 07/2024",
+    company: "SODEFA, Leverkusen",
+    description: (
+      <>
+        Development of a real estate platform with CMS and DocuSign integration and
+        serverless services using <strong>AWS Lambda</strong>, <strong>SQS</strong>, and{" "}
+        <strong>S3</strong>. I also contributed to TeamPilot.ai, building AI workflows and
+        APIs with <strong>Next.js</strong>, <strong>GraphQL</strong>, <strong>tRPC</strong>,{" "}
+        <strong>Hasura</strong>, and <strong>PostgreSQL</strong>.
+      </>
+    ),
+  },
+  {
+    period: "12/2021 - 04/2022",
+    company: "BDK Bank, Hamburg",
+    description: (
+      <>
+        Migration of a managed database into an internal AWS environment and development
+        of its data management front end and back end with <strong>React</strong>,{" "}
+        <strong>PostgreSQL</strong>, and <strong>Hasura</strong>. Data was provided to
+        surrounding systems through GraphQL and CSV exports.
+      </>
+    ),
+  },
+  {
+    period: "07/2020 - 11/2021",
     company: (
       <>
         <a href="https://aleno.me/" target="_blank" rel="noopener noreferrer">
@@ -11,69 +47,22 @@ const experience = [
     ),
     description: (
       <>
-        <strong>Node.js/TypeScript</strong> back-end development in a cloud-native{" "}
-        <strong>AWS</strong> environment, using <strong>Lambda</strong>, <strong>SQS</strong>,{" "}
-        <strong>Cognito</strong>, <strong>CloudWatch</strong>, and more.
+        Lead back-end development for a new microservice-based product using{" "}
+        <strong>AWS Lambda</strong> and <strong>Node.js</strong>, with a focus on external{" "}
+        <strong>REST</strong> and <strong>SOAP</strong> integrations. The wider platform also
+        used <strong>Next.js</strong> and <strong>GraphQL</strong>.
       </>
     ),
   },
   {
-    period: "01/2020 - 06/2020",
-    company: "Regional craft business software company, Rheine",
+    period: "2012 - 2020",
+    company: "Projects across several industries",
     description: (
       <>
-        <strong>ASP/C#</strong> back-end development, <strong>RESTful</strong> and{" "}
-        <strong>GraphQL</strong> API design, and <strong>Angular</strong> front-end development.
-      </>
-    ),
-  },
-  {
-    period: "12/2018 - 12/2019",
-    company: "Energy company, Essen",
-    description: (
-      <>
-        <strong>Spring Boot</strong> back-end development and <strong>JSON:API</strong> and{" "}
-        <strong>GraphQL</strong> API design.
-      </>
-    ),
-  },
-  {
-    period: "06/2016 - 07/2018",
-    company: "German railway company, Frankfurt am Main",
-    description: (
-      <>
-        <strong>Java EE (EJB/JPA)</strong> back-end development, <strong>Java Swing</strong>{" "}
-        front-end development, and <strong>Oracle database</strong> administration.
-      </>
-    ),
-  },
-  {
-    period: "05/2015 - 12/2015",
-    company: "German railway company, Frankfurt am Main",
-    description: (
-      <>
-        <strong>Java</strong> front-end development with <strong>Eclipse RCP e4</strong>.
-      </>
-    ),
-  },
-  {
-    period: "09/2014 - 01/2015",
-    company: "Hotel reservation services company, Frankfurt am Main",
-    description: (
-      <>
-        <strong>Java EE (EJB, Hibernate)</strong> back-end development with{" "}
-        <strong>JSP, Struts and Tiles</strong> front-end and <strong>MySQL database</strong>{" "}
-        administration.
-      </>
-    ),
-  },
-  {
-    period: "09/2013 - 06/2014",
-    company: "International life insurance company, Stuttgart",
-    description: (
-      <>
-        <strong>Java</strong> front-end development with <strong>Eclipse RCP 3.7</strong> and{" "}
-        <strong>SOAP</strong> web service development.
+        Java, Spring Boot, Eclipse RCP, Swing, ASP.NET Core, and Angular development for
+        clients including Allianz, Trust International, Deutsche Bahn Systel, and Innogy.
+        Responsibilities ranged from modernizing legacy applications and building REST,
+        GraphQL, and SOAP interfaces to coordinating an international development team.
       </>
     ),
   },
