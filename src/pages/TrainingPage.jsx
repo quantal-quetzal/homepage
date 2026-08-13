@@ -35,7 +35,7 @@ export default function TrainingPage() {
           <div className="mx-auto grid min-h-[72svh] w-full max-w-[76rem] items-center gap-12 px-5 pb-16 pt-28 sm:px-8 md:grid-cols-[minmax(0,1fr)_18rem] md:py-28 lg:gap-24">
             <div className="max-w-2xl">
               <p className="mb-4 text-sm font-bold uppercase tracking-[0.12em] text-[#2b6655]">
-                Personal Training · Ochtrup & Steinfurt
+                Personal Training · Ochtrup & Umgebung
               </p>
               <h1 className="text-4xl font-bold leading-tight text-[#153b32] sm:text-5xl">
                 Dein Ziel gibt die Richtung vor.
@@ -56,10 +56,33 @@ export default function TrainingPage() {
             <img
               className="mx-auto aspect-square w-48 rounded-full object-cover object-[center_22%] sm:w-56 md:w-full"
               src="/imgs/felix-gehring-personal-trainer.webp"
-              alt="Felix Gehring, Personal Trainer in Ochtrup und Steinfurt"
+              alt="Felix Gehring, Personal Trainer in Ochtrup und Umgebung"
               width="700"
               height="932"
             />
+          </div>
+
+          <div className="mt-16 border-t border-[#b9c8c0] pt-10">
+            <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#2b6655]">
+              Wobei ich dich unterstützen kann
+            </p>
+            <ul className="mt-6 divide-y divide-[#b9c8c0] border-y border-[#b9c8c0]">
+              <li className="py-5 text-lg leading-relaxed text-[#344b43]">
+                Du bereitest dich auf eine Aufnahmeprüfung bei der Polizei oder einer
+                Universität vor?
+              </li>
+              <li className="py-5 text-lg leading-relaxed text-[#344b43]">
+                Eine Zwischen- oder Abschlussprüfung in deiner Berufsausbildung steht an?
+              </li>
+              <li className="py-5 text-lg leading-relaxed text-[#344b43]">
+                Dein Arbeitgeber oder deine Schulleitung verlangt einen Nachweis der
+                Rettungsfähigkeit und du möchtest dafür gezielt üben?
+              </li>
+            </ul>
+            <p className="mt-6 max-w-2xl text-lg font-bold leading-relaxed text-[#13251f]">
+              Dann bist du bei mir richtig. Wir trainieren genau die Fähigkeiten, die du
+              für deine Prüfung oder deinen Nachweis brauchst.
+            </p>
           </div>
         </section>
 
