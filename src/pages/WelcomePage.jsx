@@ -8,7 +8,7 @@ const choices = [
     title: "Softwareentwickler",
     description: "TypeScript, React, Java, AWS und AI-Integration.",
     action: "Zum Entwicklerprofil",
-    image: "/imgs/felix-gehring-software.jpg",
+    image: "/imgs/felix-gehring-software.webp",
     imageAlt: "Felix Gehring als Softwareentwickler",
     icon: Code2,
     side: "software",
@@ -19,7 +19,7 @@ const choices = [
     title: "Trainer",
     description: "Schwimmen, Kraft, Athletik und individuelle Trainingsplanung.",
     action: "Zum Trainerprofil",
-    image: "/imgs/felix-gehring-personal-trainer.jpg",
+    image: "/imgs/felix-gehring-personal-trainer.webp",
     imageAlt: "Felix Gehring als Personal Trainer",
     icon: Dumbbell,
     side: "training",
@@ -50,7 +50,7 @@ function Choice({ choice }) {
       </div>
       <span
         className={`absolute left-7 top-7 text-xs font-bold tabular-nums sm:left-10 sm:top-10 lg:left-14 lg:top-14 xl:left-20 xl:top-20 ${
-          isSoftware ? "text-white/35" : "text-[#397967]"
+          isSoftware ? "text-white/60" : "text-[#2b6655]"
         }`}
         aria-hidden="true"
       >
@@ -60,7 +60,7 @@ function Choice({ choice }) {
         <div className="max-w-xl">
           <div
             className={`mb-5 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.12em] ${
-              isSoftware ? "text-white/70" : "text-[#397967]"
+              isSoftware ? "text-white/70" : "text-[#2b6655]"
             }`}
           >
             <Icon aria-hidden="true" size={20} strokeWidth={1.75} />
