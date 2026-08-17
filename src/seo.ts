@@ -18,7 +18,9 @@ export interface SeoMetadata extends RouteMetadata {
   type: OpenGraphType;
 }
 
-export const siteUrl = "https://felix-gehring.de";
+// The www host is the canonical Netlify origin. The apex domain is currently a
+// forwarding service that drops request paths, including the OG image path.
+export const siteUrl = "https://www.felix-gehring.de";
 export const socialImageUrl = `${siteUrl}/imgs/felix-gehring-og.jpg`;
 export const socialImageAlt =
   "Felix Gehring – Softwareentwickler und Personal Trainer";
