@@ -1,5 +1,17 @@
-import { ArrowRight, Code2, Dumbbell } from "lucide-react";
+import { ArrowRight, Code2, Dumbbell, type LucideIcon } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+
+interface ProfileChoice {
+  to: "/software" | "/personal-training";
+  eyebrow: string;
+  title: string;
+  description: string;
+  action: string;
+  image: string;
+  imageAlt: string;
+  icon: LucideIcon;
+  side: "software" | "training";
+}
 
 const choices = [
   {
@@ -24,9 +36,9 @@ const choices = [
     icon: Dumbbell,
     side: "training",
   },
-];
+] satisfies ProfileChoice[];
 
-function Choice({ choice }) {
+function Choice({ choice }: { choice: ProfileChoice }) {
   const Icon = choice.icon;
   const isSoftware = choice.side === "software";
 

@@ -1,7 +1,16 @@
 import { ArrowLeft, ArrowUpRight, Download, FileText } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import type { PublicationEntry } from "../data/publications";
 
-export default function PublicationPage({ publication, relatedPublication }) {
+interface PublicationPageProps {
+  publication: PublicationEntry;
+  relatedPublication: PublicationEntry;
+}
+
+export default function PublicationPage({
+  publication,
+  relatedPublication,
+}: PublicationPageProps) {
   return (
     <div className="min-h-screen bg-[#f3f5ef] text-[#13251f]">
       <header className="border-b border-[#d9dfd8]">

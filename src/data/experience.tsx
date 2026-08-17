@@ -1,4 +1,12 @@
-const experience = [
+import type { ReactNode } from "react";
+
+export interface Experience {
+  period: string;
+  company: ReactNode;
+  description: ReactNode;
+}
+
+const experience: Experience[] = [
   {
     period: "since 01/2025",
     company: "Volkswagen Financial Services, Braunschweig",

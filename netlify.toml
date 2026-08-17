@@ -6,7 +6,7 @@
   NODE_VERSION = "24"
 
 # These build-generated documents expose route-specific metadata to crawlers.
-# Keep this list aligned with `socialRoutes` in `src/seo.js`. The final catch-all
+# Keep this list aligned with `socialRoutes` in `src/seo.ts`. The final catch-all
 # remains responsible for every non-prerendered SPA route.
 [[redirects]]
   from = "/software"
