@@ -98,7 +98,10 @@ test("the software route still renders its profile", async () => {
 test("the document includes complete social-sharing metadata", async () => {
   const html = await readFile("index.html", "utf8");
 
-  assert.match(html, /rel="canonical" href="https:\/\/felix-gehring\.de\/"/);
+  assert.match(
+    html,
+    /rel="canonical" href="https:\/\/www\.felix-gehring\.de\/"/,
+  );
   assert.match(html, /property="og:type" content="profile"/);
   assert.match(html, /property="og:image:width" content="1200"/);
   assert.match(html, /property="og:image:height" content="630"/);
@@ -118,19 +121,23 @@ test("route metadata has canonical URLs and localized copy", async () => {
     "/publikationen/drop-out-nachwuchsleistungssport",
   );
 
-  assert.equal(software.canonicalUrl, "https://felix-gehring.de/software");
+  assert.equal(software.canonicalUrl, "https://www.felix-gehring.de/software");
   assert.equal(software.lang, "en");
   assert.match(software.title, /Software Developer/);
   assert.equal(
     training.canonicalUrl,
-    "https://felix-gehring.de/personal-training",
+    "https://www.felix-gehring.de/personal-training",
   );
   assert.equal(training.lang, "de");
   assert.match(training.description, /Schwimmen, Kraft und Athletik/);
   assert.equal(publication.type, "article");
   assert.equal(
     publication.canonicalUrl,
-    "https://felix-gehring.de/publikationen/drop-out-nachwuchsleistungssport",
+    "https://www.felix-gehring.de/publikationen/drop-out-nachwuchsleistungssport",
+  );
+  assert.equal(
+    publication.imageUrl,
+    "https://www.felix-gehring.de/imgs/felix-gehring-og.jpg",
   );
   assert.match(publication.title, /Drop-out im Nachwuchsleistungssport/);
 });
