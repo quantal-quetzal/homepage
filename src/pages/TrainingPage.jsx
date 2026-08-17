@@ -11,6 +11,10 @@ const examContactUrl =
   "mailto:fit@felix-gehring.de?subject=Vorbereitung%20auf%20Pr%C3%BCfung%20oder%20Rettungsnachweis";
 const barbellTrainingUrl =
   "https://www.trainerakademie-koeln.de/ausbildungen/langhanteltrainerinnenausbildung";
+const trainerCPaperUrl =
+  "/resources/Hausarbeit_Trainer_C_Ternes_Gehring.pdf";
+const trainerBPaperUrl =
+  "/resources/Gehring_Felix_Dropout_Nachwuchsleistungssport.pdf";
 
 export default function TrainingPage() {
   useFavicon("/favicons/fit.svg");
@@ -186,88 +190,172 @@ export default function TrainingPage() {
 
         <section
           id="qualifikation"
-          className="border-t border-[#d9e0dc] bg-white text-[#13251f]"
+          className="bg-white text-[#13251f]"
         >
           <div className="mx-auto max-w-[76rem] px-5 py-16 sm:px-8 md:py-24">
-            <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
-              Qualifikationen
-            </p>
-            <h2 className="mt-3 max-w-xl text-3xl font-bold leading-tight sm:text-4xl">
-              Fundiert trainieren.
-            </h2>
+            <div className="grid gap-8 border-b border-[#cbd6cf] pb-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24 lg:pb-16">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
+                  Qualifikationen
+                </p>
+                <h2 className="mt-3 max-w-md text-3xl font-bold leading-tight sm:text-4xl">
+                  Fachlich fundiert. Praktisch vermittelt.
+                </h2>
+              </div>
+              <p className="max-w-2xl self-end text-lg leading-relaxed text-[#445c54]">
+                Meine Ausbildungen decken beide Seiten des Trainings ab: präzise
+                Technikarbeit im Wasser und methodisch sauberes Krafttraining an Land.
+                Dieses Wissen fließt direkt in deine Planung und jede gemeinsame Einheit.
+              </p>
+            </div>
 
-            <div className="mt-10 grid border-t border-[#b9c8c0] md:grid-cols-2">
-              <article className="border-b border-[#b9c8c0] py-10 md:border-b-0 md:border-r md:pr-12">
-                <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
-                  Schwimm- & Rettungssport
-                </p>
-                <h3 className="mt-3 text-2xl font-bold md:min-h-[4rem]">
-                  DOSB-Trainer C Leistungssport im Rettungssport
-                </h3>
-                <p className="mt-8 max-w-md text-lg leading-relaxed text-[#344b43] md:min-h-[7rem]">
-                  Fundierte Technikvermittlung und leistungsorientierte
-                  Trainingsplanung im Schwimm- und Rettungssport, vom sicheren
-                  Einstieg bis zur gezielten Wettkampfvorbereitung.
-                </p>
-                <img
-                  className="mt-8 h-auto w-[16.25rem] max-w-full"
-                  src="/imgs/DLRG-T-C-0392097-signet.jpg"
-                  alt="DOSB-Trainer C Leistungssport Rettungssport, Lizenz von Felix Gehring, gültig bis 31. Dezember 2028"
-                  width="1417"
-                  height="1045"
-                  loading="lazy"
-                />
+            <div>
+              <article className="grid gap-8 border-b border-[#cbd6cf] py-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24 lg:py-14">
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
+                    Im Wasser
+                  </p>
+                  <h3 className="mt-3 max-w-md text-2xl font-bold leading-tight sm:text-3xl">
+                    DOSB-Trainer C Leistungssport
+                  </h3>
+                  <p className="mt-3 text-[#60736c]">
+                    DLRG · Rettungssport
+                  </p>
+                </div>
+                <div className="grid items-start gap-8 sm:grid-cols-[1fr_16.25rem] sm:gap-10">
+                  <p className="text-lg leading-relaxed text-[#445c54]">
+                    Die DOSB-Lizenz steht für fundierte Technikvermittlung und
+                    leistungsorientierte Trainingsplanung im Schwimm- und Rettungssport,
+                    vom sicheren Einstieg bis zur gezielten Wettkampfvorbereitung.
+                  </p>
+                  <img
+                    className="h-auto w-[16.25rem] max-w-full"
+                    src="/imgs/DLRG-T-C-0392097-signet.jpg"
+                    alt="DOSB-Trainer C Leistungssport Rettungssport der DLRG, Lizenz von Felix Gehring"
+                    width="1417"
+                    height="1045"
+                    loading="lazy"
+                  />
+                </div>
               </article>
-              <article className="py-10 md:pl-12">
-                <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
-                  Kraft & Athletik
-                </p>
-                <h3 className="mt-3 text-2xl font-bold md:min-h-[4rem]">
-                  Langhanteltrainer der Trainerakademie Köln des DOSB
-                </h3>
-                <p className="mt-8 max-w-md text-lg leading-relaxed text-[#344b43] md:min-h-[7rem]">
-                  Fundierte Technikvermittlung und zielgerichtete
-                  Trainingsplanung mit der Langhantel, als Grundlage für Kraft,
-                  Belastbarkeit und sportliche Leistung.
-                </p>
-                <a
-                  className="mt-8 inline-flex items-center gap-2 font-bold text-[#153b32]"
-                  href={barbellTrainingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ausbildungsbeschreibung
-                  <ArrowUpRight aria-hidden="true" size={18} />
-                </a>
+
+              <article className="grid gap-8 border-b border-[#cbd6cf] py-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24 lg:py-14">
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
+                    An Land
+                  </p>
+                  <h3 className="mt-3 max-w-md text-2xl font-bold leading-tight sm:text-3xl">
+                    Langhanteltrainer
+                  </h3>
+                  <p className="mt-3 text-[#60736c]">
+                    Trainerakademie Köln des DOSB
+                  </p>
+                </div>
+                <div>
+                  <p className="max-w-2xl text-lg leading-relaxed text-[#445c54]">
+                    Die Ausbildung verbindet den technisch korrekten Einsatz der
+                    Langhantel mit Didaktik und Trainingsmethodik. So kann ich
+                    Langhanteltraining passend zur jeweiligen Sportart planen, vermitteln
+                    und sicher in den Trainingsalltag integrieren.
+                  </p>
+                  <a
+                    className="mt-6 inline-flex items-center gap-2 font-bold text-[#153b32]"
+                    href={barbellTrainingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ausbildung bei der Trainerakademie
+                    <ArrowUpRight aria-hidden="true" size={18} />
+                  </a>
+                </div>
               </article>
             </div>
 
-            <div className="flex flex-col gap-6 border-t border-[#b9c8c0] pt-8 md:flex-row md:items-start md:justify-between">
+            <div className="grid gap-8 border-b border-[#cbd6cf] py-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
               <div>
-                <div className="flex items-center gap-3 text-[#397967]">
-                  <MapPin aria-hidden="true" size={22} />
-                  <p className="text-sm font-bold uppercase tracking-[0.12em]">
-                    Trainingsorte
-                  </p>
+                <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#397967]">
+                  Vertiefende Einblicke
+                </p>
+                <h3 className="mt-3 max-w-md text-2xl font-bold leading-tight">
+                  Hausarbeiten aus der Trainerausbildung
+                </h3>
+              </div>
+              <div>
+                <p className="max-w-2xl text-lg leading-relaxed text-[#445c54]">
+                  Für alle, die sich näher für Trainingssteuerung und die Arbeit mit
+                  Nachwuchsathletinnen und -athleten interessieren.
+                </p>
+                <div className="mt-7 border-t border-[#cbd6cf]">
+                  <a
+                    className="group flex items-start justify-between gap-6 border-b border-[#cbd6cf] py-5 text-[#153b32] no-underline"
+                    href={trainerBPaperUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>
+                      <span className="block font-bold group-hover:underline">
+                        Drop-out im Nachwuchsleistungssport
+                      </span>
+                      <span className="mt-1 block text-sm text-[#60736c]">
+                        Trainer-B-Hausarbeit · 17. August 2026 · PDF
+                      </span>
+                    </span>
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="mt-0.5 shrink-0"
+                      size={18}
+                    />
+                  </a>
+                  <a
+                    className="group flex items-start justify-between gap-6 border-b border-[#cbd6cf] py-5 text-[#153b32] no-underline"
+                    href={trainerCPaperUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>
+                      <span className="block font-bold group-hover:underline">
+                        Leistungskontrolle im Rettungssport
+                      </span>
+                      <span className="mt-1 block text-sm text-[#60736c]">
+                        Trainer-C-Hausarbeit · mit Sabrina Ternes · 14. November 2017 · PDF
+                      </span>
+                    </span>
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="mt-0.5 shrink-0"
+                      size={18}
+                    />
+                  </a>
                 </div>
-                <p className="mt-3 text-[#52665f]">
-                  Outdoor, online, bei dir zu Hause oder im Fitnessstudio ·
-                  Deutsch & Englisch
+              </div>
+            </div>
+
+            <div className="grid gap-8 pt-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
+              <div className="flex items-center gap-3 text-[#397967]">
+                <MapPin aria-hidden="true" size={22} />
+                <p className="text-sm font-bold uppercase tracking-[0.12em]">
+                  Training & Kontakt
                 </p>
               </div>
-              <div className="md:text-right">
-                <a className="block font-bold text-[#153b32]" href={contactUrl}>
-                  fit@felix-gehring.de
-                </a>
-                <a
-                  className="mt-3 inline-flex items-center gap-2 font-bold text-[#153b32]"
-                  href={profileUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Profil auf PersonalFitness.de
-                  <ArrowUpRight aria-hidden="true" size={18} />
-                </a>
+              <div className="grid gap-8 sm:grid-cols-[1fr_auto] sm:items-start">
+                <p className="max-w-xl text-lg leading-relaxed text-[#445c54]">
+                  In Ochtrup und Umgebung: outdoor, bei dir zu Hause oder im
+                  Fitnessstudio. Online-Training nach Absprache, auf Deutsch oder Englisch.
+                </p>
+                <div className="sm:text-right">
+                  <a className="block font-bold text-[#153b32]" href={contactUrl}>
+                    fit@felix-gehring.de
+                  </a>
+                  <a
+                    className="mt-3 inline-flex items-center gap-2 font-bold text-[#153b32]"
+                    href={profileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Profil auf PersonalFitness.de
+                    <ArrowUpRight aria-hidden="true" size={18} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
