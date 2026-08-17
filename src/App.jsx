@@ -1,5 +1,11 @@
 import { Outlet } from "@tanstack/react-router";
+import Seo from "./components/Seo";
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <>
+      <Seo />
+      <Outlet />
+    </>
+  );
 }

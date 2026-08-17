@@ -5,6 +5,8 @@ import {
   redirect,
 } from "@tanstack/react-router";
 import App from "./App";
+import { publications } from "./data/publications";
+import PublicationPage from "./pages/PublicationPage";
 import SoftwarePage from "./pages/SoftwarePage";
 import TrainingPage from "./pages/TrainingPage";
 import WelcomePage from "./pages/WelcomePage";
@@ -32,6 +34,28 @@ const trainingRoute = createRoute({
   component: TrainingPage,
 });
 
+const dropoutPublicationRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: publications.dropout.path,
+  component: () => (
+    <PublicationPage
+      publication={publications.dropout}
+      relatedPublication={publications.performance}
+    />
+  ),
+});
+
+const performancePublicationRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: publications.performance.path,
+  component: () => (
+    <PublicationPage
+      publication={publications.performance}
+      relatedPublication={publications.dropout}
+    />
+  ),
+});
+
 const legacyIndexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/index.html",
@@ -44,6 +68,8 @@ const routeTree = rootRoute.addChildren([
   welcomeRoute,
   softwareRoute,
   trainingRoute,
+  dropoutPublicationRoute,
+  performancePublicationRoute,
   legacyIndexRoute,
 ]);
 

@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import PersonalFitnessWidget from "../components/PersonalFitnessWidget";
+import { publications } from "../data/publications";
 import useFavicon from "../hooks/useFavicon";
 
 const profileUrl =
@@ -11,10 +12,6 @@ const examContactUrl =
   "mailto:fit@felix-gehring.de?subject=Vorbereitung%20auf%20Pr%C3%BCfung%20oder%20Rettungsnachweis";
 const barbellTrainingUrl =
   "https://www.trainerakademie-koeln.de/ausbildungen/langhanteltrainerinnenausbildung";
-const trainerCPaperUrl =
-  "/resources/Hausarbeit_Trainer_C_Ternes_Gehring.pdf";
-const trainerBPaperUrl =
-  "/resources/Gehring_Felix_Dropout_Nachwuchsleistungssport.pdf";
 
 export default function TrainingPage() {
   useFavicon("/favicons/fit.svg");
@@ -286,11 +283,9 @@ export default function TrainingPage() {
                   Nachwuchsathletinnen und -athleten interessieren.
                 </p>
                 <div className="mt-7 border-t border-[#cbd6cf]">
-                  <a
+                  <Link
                     className="group flex items-start justify-between gap-6 border-b border-[#cbd6cf] py-5 text-[#153b32] no-underline"
-                    href={trainerBPaperUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    to={publications.dropout.path}
                   >
                     <span>
                       <span className="block font-bold group-hover:underline">
@@ -305,12 +300,10 @@ export default function TrainingPage() {
                       className="mt-0.5 shrink-0"
                       size={18}
                     />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="group flex items-start justify-between gap-6 border-b border-[#cbd6cf] py-5 text-[#153b32] no-underline"
-                    href={trainerCPaperUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    to={publications.performance.path}
                   >
                     <span>
                       <span className="block font-bold group-hover:underline">
@@ -325,7 +318,7 @@ export default function TrainingPage() {
                       className="mt-0.5 shrink-0"
                       size={18}
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

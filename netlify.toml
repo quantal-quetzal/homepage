@@ -5,6 +5,29 @@
 [build.environment]
   NODE_VERSION = "24"
 
+# These build-generated documents expose route-specific metadata to crawlers.
+# Keep this list aligned with `socialRoutes` in `src/seo.js`. The final catch-all
+# remains responsible for every non-prerendered SPA route.
+[[redirects]]
+  from = "/software"
+  to = "/software/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/personal-training"
+  to = "/personal-training/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/publikationen/drop-out-nachwuchsleistungssport"
+  to = "/publikationen/drop-out-nachwuchsleistungssport/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/publikationen/leistungskontrolle-im-rettungssport"
+  to = "/publikationen/leistungskontrolle-im-rettungssport/index.html"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
