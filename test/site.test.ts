@@ -5,9 +5,11 @@ import { createMemoryHistory, RouterProvider } from "@tanstack/react-router";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
+import type { ViteDevServer } from "vite";
+import type { router as appRouter } from "../src/router";
 
-let vite;
-let router;
+let vite: ViteDevServer;
+let router: typeof appRouter;
 
 before(async () => {
   vite = await createServer({
@@ -15,14 +17,14 @@ before(async () => {
     server: { middlewareMode: true, ws: false },
   });
 
-  ({ router } = await vite.ssrLoadModule("/src/router.jsx"));
+  ({ router } = await vite.ssrLoadModule("/src/router.tsx"));
 });
 
 after(async () => {
   await vite.close();
 });
 
-async function renderRoute(path) {
+async function renderRoute(path: string) {
   router.update({
     history: createMemoryHistory({ initialEntries: [path] }),
   });
@@ -109,7 +111,7 @@ test("the document includes complete social-sharing metadata", async () => {
 });
 
 test("route metadata has canonical URLs and localized copy", async () => {
-  const { getSeoMetadata } = await vite.ssrLoadModule("/src/seo.js");
+  const { getSeoMetadata } = await vite.ssrLoadModule("/src/seo.ts");
   const software = getSeoMetadata("/software/");
   const training = getSeoMetadata("/personal-training");
   const publication = getSeoMetadata(
@@ -134,7 +136,7 @@ test("route metadata has canonical URLs and localized copy", async () => {
 });
 
 test("the production build prerenders metadata for shareable routes", async () => {
-  const config = await readFile("vite.config.js", "utf8");
+  const config = await readFile("vite.config.ts", "utf8");
   const netlify = await readFile("netlify.toml", "utf8");
 
   assert.match(config, /socialRouteDocuments\(\)/);

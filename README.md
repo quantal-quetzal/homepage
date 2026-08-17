@@ -15,12 +15,12 @@ Create the production build with `pnpm build` and preview it locally with
 ## Social metadata and static route documents
 
 This site is a client-rendered React single-page application. Browsers execute
-React and receive route-specific metadata from `src/components/Seo.jsx`, but
+React and receive route-specific metadata from `src/components/Seo.tsx`, but
 many social crawlers do not execute JavaScript. If every URL returned the base
 `index.html`, links to `/software`, `/personal-training`, and the publication
 pages would all receive the homepage's Open Graph preview.
 
-The `socialRouteDocuments` build plugin in `vite.config.js` solves this without
+The `socialRouteDocuments` build plugin in `vite.config.ts` solves this without
 adding server-side rendering:
 
 1. Vite builds the normal application and writes `dist/index.html`.
@@ -39,9 +39,9 @@ default crawler document and the template used by the build plugin.
 
 ### Adding a shareable route
 
-1. Add the page to `src/router.jsx`.
-2. Add its metadata to `src/seo.js`. Publication metadata is generated
-   automatically from `src/data/publications.js`.
+1. Add the page to `src/router.tsx`.
+2. Add its metadata to `src/seo.ts`. Publication metadata is generated
+   automatically from `src/data/publications.ts`.
 3. Add an exact `200` rewrite from the public route to its generated
    `<route>/index.html` document in `netlify.toml`.
 4. Run `pnpm check`, then optionally inspect the generated document in `dist/`
@@ -53,5 +53,6 @@ required or the site moves to an SSR/prerendering framework.
 ## Regression tests
 
 The project includes regression tests for the main routes and linked PDF
-resources. Run them with `pnpm test`. Use `pnpm check` to run the tests followed
-by a production build, matching the validation performed in CI.
+resources. Run them with `pnpm test`. Use `pnpm typecheck` for strict TypeScript
+validation. `pnpm check` runs the type checker, tests, and production build,
+matching the validation performed in CI.

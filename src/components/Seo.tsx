@@ -2,7 +2,7 @@ import { useLocation } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { getSeoMetadata } from "../seo";
 
-function setMeta(selector, attribute, value) {
+function setMeta(selector: string, attribute: string, value: string) {
   const element = document.head.querySelector(selector);
   if (element) element.setAttribute(attribute, value);
 }

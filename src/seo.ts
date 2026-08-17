@@ -1,11 +1,29 @@
-import { publicationList } from "./data/publications.js";
+import { publicationList } from "./data/publications.ts";
+
+export type OpenGraphType = "profile" | "article";
+
+interface RouteMetadata {
+  title: string;
+  description: string;
+  lang: "de" | "en";
+  locale: "de_DE" | "en_US";
+  path: string;
+  type?: OpenGraphType;
+}
+
+export interface SeoMetadata extends RouteMetadata {
+  canonicalUrl: string;
+  imageUrl: string;
+  imageAlt: string;
+  type: OpenGraphType;
+}
 
 export const siteUrl = "https://felix-gehring.de";
 export const socialImageUrl = `${siteUrl}/imgs/felix-gehring-og.jpg`;
 export const socialImageAlt =
   "Felix Gehring – Softwareentwickler und Personal Trainer";
 
-const defaultMetadata = {
+const defaultMetadata: RouteMetadata = {
   title: "Felix Gehring | Software & Personal Training",
   description:
     "Felix Gehring: Softwareentwickler und IT-Berater sowie Personal Trainer für Schwimmen, Kraft und Athletik.",
@@ -14,7 +32,7 @@ const defaultMetadata = {
   path: "/",
 };
 
-const routeMetadata = {
+const routeMetadata: Record<string, RouteMetadata> = {
   "/": defaultMetadata,
   "/software": {
     title: "Felix Gehring | Software Developer & IT Consultant",
@@ -51,12 +69,12 @@ export const socialRoutes = Object.keys(routeMetadata).filter(
   (pathname) => pathname !== "/",
 );
 
-function normalizePath(pathname) {
+function normalizePath(pathname: string) {
   if (pathname === "/index.html") return "/";
   return pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
 }
 
-export function getSeoMetadata(pathname = "/") {
+export function getSeoMetadata(pathname = "/"): SeoMetadata {
   const normalizedPath = normalizePath(pathname);
   const metadata = routeMetadata[normalizedPath] ?? defaultMetadata;
 

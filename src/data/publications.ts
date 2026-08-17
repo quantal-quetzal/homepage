@@ -1,3 +1,17 @@
+export interface Publication {
+  path: `/publikationen/${string}`;
+  title: string;
+  subtitle: string;
+  description: string;
+  category: string;
+  authors: string;
+  date: string;
+  pages: string;
+  pdfUrl: `/resources/${string}.pdf`;
+  coverUrl: `/imgs/${string}.webp`;
+  coverAlt: string;
+}
+
 export const publications = {
   dropout: {
     path: "/publikationen/drop-out-nachwuchsleistungssport",
@@ -30,6 +44,9 @@ export const publications = {
     coverUrl: "/imgs/publikation-critical-swim-speed.webp",
     coverAlt: "Titelseite der Hausarbeit Leistungskontrolle im Rettungssport",
   },
-};
+} as const satisfies Record<string, Publication>;
 
-export const publicationList = Object.values(publications);
+export type PublicationEntry =
+  (typeof publications)[keyof typeof publications];
+
+export const publicationList: Publication[] = Object.values(publications);

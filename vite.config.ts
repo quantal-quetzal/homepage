@@ -2,15 +2,15 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
-import { defineConfig } from "vite";
-import { getSeoMetadata, socialRoutes } from "./src/seo.js";
+import { defineConfig, type Plugin } from "vite";
+import { getSeoMetadata, socialRoutes } from "./src/seo.ts";
 
 // Social crawlers commonly read the initial HTML without executing React. This
 // build-only plugin creates a metadata-specific HTML shell for every shareable
 // SPA route. Netlify serves those files through the exact rewrites in
 // netlify.toml; each shell still boots the same client application.
 
-function escapeAttribute(value) {
+function escapeAttribute(value: string) {
   return value
     .replaceAll("&", "&amp;")
     .replaceAll('"', "&quot;")
@@ -18,7 +18,12 @@ function escapeAttribute(value) {
     .replaceAll(">", "&gt;");
 }
 
-function replaceMetaContent(html, attribute, key, value) {
+function replaceMetaContent(
+  html: string,
+  attribute: "name" | "property",
+  key: string,
+  value: string,
+) {
   const tagPattern = new RegExp(
     `<meta(?=[^>]*${attribute}="${key}")[^>]*>`,
     "s",
@@ -29,7 +34,7 @@ function replaceMetaContent(html, attribute, key, value) {
   );
 }
 
-function renderRouteDocument(baseHtml, pathname) {
+function renderRouteDocument(baseHtml: string, pathname: string) {
   const metadata = getSeoMetadata(pathname);
   let html = baseHtml
     .replace(/lang="[^"]*"/, `lang="${metadata.lang}"`)
@@ -39,7 +44,9 @@ function renderRouteDocument(baseHtml, pathname) {
       `$1${metadata.canonicalUrl}$2`,
     );
 
-  for (const [attribute, key, value] of [
+  const replacements: Array<
+    [attribute: "name" | "property", key: string, value: string]
+  > = [
     ["name", "description", metadata.description],
     ["property", "og:type", metadata.type],
     ["property", "og:url", metadata.canonicalUrl],
@@ -48,15 +55,17 @@ function renderRouteDocument(baseHtml, pathname) {
     ["property", "og:locale", metadata.locale],
     ["name", "twitter:title", metadata.title],
     ["name", "twitter:description", metadata.description],
-  ]) {
+  ];
+
+  for (const [attribute, key, value] of replacements) {
     html = replaceMetaContent(html, attribute, key, value);
   }
 
   return html;
 }
 
-function socialRouteDocuments() {
-  let outputDirectory;
+function socialRouteDocuments(): Plugin {
+  let outputDirectory = "";
 
   return {
     name: "social-route-documents",
