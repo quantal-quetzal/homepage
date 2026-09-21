@@ -30,7 +30,7 @@
     "vite": "^8.3.0"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.170.35",
+    "@tanstack/react-router": "^1.170.38",
     "lucide-react": "^1.47.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"
