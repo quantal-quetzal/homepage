@@ -29,7 +29,7 @@ const choices = [
     to: "/personal-training",
     eyebrow: "Personal Training",
     title: "Trainer",
-    description: "Schwimmen, Kraft, Athletik und individuelle Trainingsplanung.",
+    description: "DOSB-Trainer B Leistungssport · Rettungssport. Schwimmen, Kraft und Athletik.",
     action: "Zum Trainerprofil",
     image: "/imgs/felix-gehring-personal-trainer.webp",
     imageAlt: "Felix Gehring als Personal Trainer",

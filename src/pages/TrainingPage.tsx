@@ -49,6 +49,12 @@ export default function TrainingPage() {
                 wir genau dort, wo du heute stehst.
               </p>
               <a
+                className="mt-4 block w-fit font-bold text-[#2b6655] underline underline-offset-4"
+                href="#qualifikation"
+              >
+                DOSB-Trainer B Leistungssport · Rettungssport
+              </a>
+              <a
                 className="mt-8 inline-flex items-center gap-3 border border-[#153b32] bg-[#153b32] px-5 py-3 font-bold text-white no-underline transition hover:bg-transparent hover:text-[#153b32]"
                 href={contactUrl}
               >
@@ -213,22 +219,29 @@ export default function TrainingPage() {
                     Im Wasser
                   </p>
                   <h3 className="mt-3 max-w-md text-2xl font-bold leading-tight sm:text-3xl">
-                    DOSB-Trainer C Leistungssport
+                    DOSB-Trainer B Leistungssport
                   </h3>
                   <p className="mt-3 text-[#60736c]">
                     DLRG · Rettungssport
                   </p>
+                  <p className="mt-2 text-sm text-[#60736c]">
+                    Erteilt am <time dateTime="2026-11-17">17. November 2026</time>
+                    {" · Gültig bis "}
+                    <time dateTime="2029-12-31">31. Dezember 2029</time>
+                  </p>
                 </div>
                 <div className="grid items-start gap-8 sm:grid-cols-[1fr_16.25rem] sm:gap-10">
                   <p className="text-lg leading-relaxed text-[#445c54]">
-                    Die DOSB-Lizenz steht für fundierte Technikvermittlung und
-                    leistungsorientierte Trainingsplanung im Schwimm- und Rettungssport,
-                    vom sicheren Einstieg bis zur gezielten Wettkampfvorbereitung.
+                    Mit der B-Lizenz Leistungssport im Rettungssport baue ich auf
+                    meiner Trainer-C-Ausbildung auf. Der Schwerpunkt liegt auf
+                    leistungsorientierter Trainingsplanung und der Entwicklung
+                    von Athletinnen und Athleten. Dieses Wissen verbinde ich mit
+                    präziser Technikarbeit im Schwimm- und Rettungssport.
                   </p>
                   <img
                     className="h-auto w-[16.25rem] max-w-full"
-                    src="/imgs/DLRG-T-C-0392097-signet.jpg"
-                    alt="DOSB-Trainer C Leistungssport Rettungssport der DLRG, Lizenz von Felix Gehring"
+                    src="/imgs/DLRG-T-B-1524660-signet.jpg"
+                    alt="DOSB-Trainer B Leistungssport Rettungssport der DLRG, Lizenz von Felix Gehring"
                     width="1417"
                     height="1045"
                     loading="lazy"
