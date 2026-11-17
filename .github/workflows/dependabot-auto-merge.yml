@@ -4,15 +4,23 @@ on:
   pull_request_target:
     types: [opened, synchronize, reopened]
 
+concurrency:
+  group: dependabot-auto-merge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 permissions:
+  actions: read
+  checks: read
   contents: write
   pull-requests: write
 
 jobs:
-  enable-auto-merge:
-    if: github.actor == 'dependabot[bot]'
+  auto-merge:
+    if: >-
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Read Dependabot metadata
         id: metadata
@@ -20,10 +28,57 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Enable squash auto-merge for non-major updates
+      - name: Wait for CI and squash non-major updates
         if: >-
-          steps.metadata.outputs.update-type != 'version-update:semver-major'
+          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-minor'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --auto --squash
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # The PR and this workflow start together, so CI may not exist yet.
+          for attempt in {1..24}; do
+            ci_run_id="$(gh run list \
+              --repo "$GITHUB_REPOSITORY" \
+              --workflow ci.yml \
+              --event pull_request \
+              --commit "$PR_HEAD_SHA" \
+              --limit 1 \
+              --json databaseId \
+              --jq '.[0].databaseId // empty')"
+            if [[ -n "$ci_run_id" ]]; then
+              break
+            fi
+            echo "Waiting for CI run ($attempt/24)..."
+            sleep 5
+          done
+
+          if [[ -z "$ci_run_id" ]]; then
+            echo "::error::No CI run found for the pull request head; leaving it unmerged."
+            exit 1
+          fi
+
+          gh run watch "$ci_run_id" \
+            --repo "$GITHUB_REPOSITORY" \
+            --exit-status \
+            --interval 10
+
+          conclusion="$(gh run view "$ci_run_id" \
+            --repo "$GITHUB_REPOSITORY" \
+            --json conclusion \
+            --jq '.conclusion')"
+          if [[ "$conclusion" != "success" ]]; then
+            echo "::error::CI did not succeed; leaving the pull request unmerged."
+            exit 1
+          fi
+
+          # Native --auto requires branch protection. CI is checked explicitly
+          # above, and the SHA guard rejects any head changes while we waited.
+          gh pr merge "$PR_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --squash \
+            --match-head-commit "$PR_HEAD_SHA"
