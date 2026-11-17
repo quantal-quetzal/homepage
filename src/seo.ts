@@ -47,7 +47,7 @@ const routeMetadata: Record<string, RouteMetadata> = {
   "/personal-training": {
     title: "Felix Gehring | Personal Trainer in Ochtrup",
     description:
-      "Individuelles Personal Training für Schwimmen, Kraft und Athletik in Ochtrup und Umgebung – vom Einstieg bis zum Leistungssport.",
+      "Personal Training für Schwimmen, Kraft und Athletik in Ochtrup und Umgebung mit DOSB-Trainer B Leistungssport im Rettungssport, Felix Gehring.",
     lang: "de",
     locale: "de_DE",
     path: "/personal-training",
